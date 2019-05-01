@@ -1,5 +1,5 @@
 
-class Event { 
+class EventBus { 
   /** Map of listeners */
   private listeners: Record<string, Function[]> = {};
   
@@ -7,7 +7,7 @@ class Event {
    * Creates new array of listeners if there isn't one yet
    * @param eventName 
    */
-  private registerEvent(eventName: string) {
+  private register(eventName: string) {
     const exists = eventName in this.listeners;
     if (!exists) {
       this.listeners[eventName] = [];
@@ -20,7 +20,7 @@ class Event {
    * @param callback 
    */
   public on(eventName: string, callback: Function) : Function {
-    this.registerEvent(eventName);
+    this.register(eventName);
     this.listeners[eventName].push(callback);
     return () => {
       this.off(eventName, callback);
@@ -33,7 +33,6 @@ class Event {
    * @param callback 
    */
   public once(eventName: string, callback: Function) : Function {
-    this.registerEvent(eventName);
     const unsubscribe = this.on(eventName, (payload: any) => {
       callback(payload);
       unsubscribe();
@@ -69,4 +68,4 @@ class Event {
   }
 }
 
-export = Event;
+export = EventBus;
