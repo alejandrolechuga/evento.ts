@@ -1,0 +1,21 @@
+{
+  "name": "evento",
+  "version": "1.0.0",
+  "description": "Simple Event Bus",
+  "main": "index.js",
+  "repository": "not yet",
+  "author": "Alejandro Lechuga",
+  "license": "LOL",
+  "private": false,
+  "scripts": {
+    "test": "mocha tests/"
+  },
+  "dependencies": {
+    "tslint-config-airbnb": "^5.11.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2"
+  }
+}
