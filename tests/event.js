@@ -48,4 +48,24 @@ describe('Event', function() {
     evento.dispatch(eventName, {});
     assert.ok(callback.calledOnce);
   });
+
+  it('should pass payload to listener', () => {
+    const eventName = 'yoyo';
+    
+    let received = null;
+    const callback = (payload) => received = payload;
+    evento.on(eventName, callback);
+
+    let payload = {};
+    evento.dispatch(eventName, payload);
+    assert.ok(received === payload);
+
+    payload = undefined;
+    evento.dispatch(eventName);
+    assert.ok(received === payload);
+
+    payload = 'doritos';
+    evento.dispatch(eventName, payload);
+    assert.ok(received === payload);
+  });
 });

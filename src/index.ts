@@ -33,7 +33,7 @@ class EventBus {
    * @param callback 
    */
   public once(eventName: string, callback: Function) : Function {
-    const unsubscribe = this.on(eventName, (payload: any) => {
+    const unsubscribe = this.on(eventName, (payload?: any) => {
       callback(payload);
       unsubscribe();
     });
@@ -60,7 +60,7 @@ class EventBus {
    * @param eventName 
    * @param payload 
    */
-  public dispatch(eventName: string, payload: any) {
+  public dispatch(eventName: string, payload?: any) {
     const listeners = this.listeners[eventName];
     if (listeners) {
       listeners.forEach((listener) => listener(payload));
