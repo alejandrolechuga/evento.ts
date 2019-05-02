@@ -35,7 +35,7 @@ const EventBus = new Evento();
 
  ```
 ### `off`
-```
+```typescript
 // Somewhere in your code
 EventBus.off('stuff', callback);
 ```
