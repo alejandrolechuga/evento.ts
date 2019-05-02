@@ -1,5 +1,5 @@
 {
-  "name": "evento",
+  "name": "evento-ts",
   "version": "1.0.1",
   "description": "Simple Event Bus",
   "main": "dist/index.js",
