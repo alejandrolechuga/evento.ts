@@ -20,33 +20,33 @@ const EventBus = new Evento();
 
 ```
 
-### `on`
+### `on` listens to events
  ```typescript
  EventBus.on('stuff', (payload: any) => {
   console.log(payload);
 });
 
  ```
-### `once`
+### `once` listens just once
  ```typescript
  EventBus.once('stuff', (payload: any) => {
   console.log(payload);
 });
 
  ```
-### `off`
+### `off` removes the listener
 ```typescript
 // Somewhere in your code
 EventBus.off('stuff', callback);
 ```
 
-### `dispatch`
+### `dispatch` fires an event
 ```typescript
 // Somewhere in your code
 EventBus.dispatch('stuff', 'take this!');
 ```
 
-### `unsubscribe` ? similar to `off`
+### `unsubscribe` ? similar to `off` easy way to remove listener
 ```typescript
 const unsubscribe = EventBus.on('stuff', (payload: any) => {
   console.log(payload);
