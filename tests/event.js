@@ -1,6 +1,6 @@
 let assert = require('assert');
 let sinon = require('sinon');
-let Evento = require('../src/');
+let Evento = require('../dist/');
 
 
 describe('Event', function() {

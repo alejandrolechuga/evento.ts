@@ -1,15 +1,23 @@
 {
   "name": "evento",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Event Bus",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
   "repository": "not yet",
   "author": "Alejandro Lechuga",
-  "license": "LOL",
+  "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "tsc",    
     "test": "mocha tests/"
   },
+  "keywords": [
+    "event",
+    "bus",
+    "dispatch",
+    "listen"
+  ],
   "dependencies": {
     "tslint-config-airbnb": "^5.11.1"
   },
