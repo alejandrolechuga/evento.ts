@@ -2,7 +2,7 @@ version: 2
 jobs:
   working_directory: ~/repo
   docker:
-  - image: circleci/node:10.15.3
+    - image: circleci/node:10.15.3
   steps:
     - checkout
     # Download and cache dependencies
@@ -12,13 +12,13 @@ jobs:
         # fallback to using the latest cache if no exact match is found
         - v1-dependencies-
     - run: 
-      name: Install Dependecies
-      command: yarn
+        name: Install Dependecies
+        command: yarn
     - save_cache:
-      paths:
-        - node_modules
-      key: v1-dependencies-{{ checksum "package.json" }}
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
 
     - run:
-      name: Build and Test
-      command: npm run build
+        name: Build and Test
+        command: npm run build
