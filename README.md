@@ -1,5 +1,5 @@
 # evento.ts
-evento is just another simple event bus library written in TypoScript
+evento is just another simple event bus library written in TypeScript
 
 # Oh how do I install this ?
 
